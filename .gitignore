@@ -2,7 +2,8 @@
 **/.output
 **/.data
 **/.nuxt
-
+Frontend/.data
+Frontend/.nuxt
 
 # Node dependencies
 **/node_modules
