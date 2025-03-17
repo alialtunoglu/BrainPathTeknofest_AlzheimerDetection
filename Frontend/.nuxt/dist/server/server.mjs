@@ -1,1 +1,1 @@
-export { default } from "file:///E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

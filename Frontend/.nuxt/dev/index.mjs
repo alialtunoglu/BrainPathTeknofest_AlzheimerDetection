@@ -3,40 +3,40 @@ import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, getResponseStatus, setHeaders, sendRedirect, proxyRequest, createError, getQuery as getQuery$1, getRouterParam, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/h3/dist/index.mjs';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import destr from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/destr/dist/index.mjs';
-import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery, joinRelativeURL } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/ufo/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/unhead/dist/server.mjs';
-import { isVNode, toValue, isRef } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/vue/index.mjs';
-import { walkResolver } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/unhead/dist/utils.mjs';
-import { renderToString } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/vue/server-renderer/index.mjs';
-import { klona } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/scule/dist/index.mjs';
-import { stringify, uneval } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/devalue/index.js';
-import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/unhead/dist/plugins.mjs';
-import { createHooks } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/node-mock-http/dist/index.mjs';
+import { getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, getResponseStatus, setHeaders, sendRedirect, proxyRequest, createError, getQuery as getQuery$1, getRouterParam, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/h3/dist/index.mjs';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import destr from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/destr/dist/index.mjs';
+import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery, joinRelativeURL } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/ufo/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/unhead/dist/server.mjs';
+import { isVNode, toValue, isRef } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/vue/index.mjs';
+import { walkResolver } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/unhead/dist/utils.mjs';
+import { renderToString } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/vue/server-renderer/index.mjs';
+import { klona } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/scule/dist/index.mjs';
+import { stringify, uneval } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/devalue/index.js';
+import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/unhead/dist/plugins.mjs';
+import { createHooks } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/node-mock-http/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/youch-core/build/index.js';
-import { Youch } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/source-map/source-map.js';
+import consola, { consola as consola$1 } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/youch-core/build/index.js';
+import { Youch } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/source-map/source-map.js';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { getContext } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/unctx/dist/index.mjs';
-import { captureRawStackTrace, parseRawStackTrace } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/errx/dist/index.js';
-import { basename, isAbsolute } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/pathe/dist/index.mjs';
-import { getIcons } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/@iconify/utils/lib/index.mjs';
-import { digest, hash as hash$1 } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/ohash/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/unstorage/drivers/fs.mjs';
-import { collections } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.nuxt/nuxt-icon-server-bundle.mjs';
-import localAdapter from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/db0/dist/connectors/better-sqlite3.mjs';
+import { getContext } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/unctx/dist/index.mjs';
+import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/errx/dist/index.js';
+import { basename, isAbsolute } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/pathe/dist/index.mjs';
+import { getIcons } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/@iconify/utils/lib/index.mjs';
+import { digest, hash as hash$1 } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/ohash/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/unstorage/drivers/fs.mjs';
+import { collections } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.nuxt/nuxt-icon-server-bundle.mjs';
+import localAdapter from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/db0/dist/connectors/better-sqlite3.mjs';
 import { fileURLToPath } from 'node:url';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/ipx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/radix3/dist/index.mjs';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/ipx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/node_modules/radix3/dist/index.mjs';
 
 function isJsonRequest(event) {
   if (hasReqHeader(event, "accept", "text/html")) {
@@ -247,13 +247,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _p9kCkxIHjY3KDTsHISTlGQtDzYy7rrh3TT7G48wR4 = (function(nitro) {
+const _o7bykfnWW8tFY62XFofFC7ZKVgfrTO0jBt9S_OazIQ = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script$1}<\/script>`);
   });
 });
 
-const rootDir = "E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend";
+const rootDir = "C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -272,7 +272,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _yaw4IMSkrvRwqkjdrBXvSwZhrX8u4MiUlIHk4AN9Di8 = (nitroApp) => {
+const _r3bUeKsg3lpFIkcFPRX36gy5K8NFZaV_vG1jhbnPJI = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -343,16 +343,16 @@ function onConsoleLog(callback) {
 
 const script = "\"use strict\";(()=>{const t=window,e=document.documentElement,c=[\"dark\",\"light\"],n=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let i=n===\"system\"?u():n;const r=e.getAttribute(\"data-color-mode-forced\");r&&(i=r),l(i),t[\"__NUXT_COLOR_MODE__\"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.add(s):e.className+=\" \"+s,a&&e.setAttribute(\"data-\"+a,o)}function d(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,\"g\"),\"\"),a&&e.removeAttribute(\"data-\"+a)}function f(o){return t.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function u(){if(t.matchMedia&&f(\"\").media!==\"not all\"){for(const o of c)if(f(\":\"+o).matches)return o}return\"light\"}})();function getStorageValue(t,e){switch(t){case\"localStorage\":return window.localStorage.getItem(e);case\"sessionStorage\":return window.sessionStorage.getItem(e);case\"cookie\":return getCookie(e);default:return null}}function getCookie(t){const c=(\"; \"+window.document.cookie).split(\"; \"+t+\"=\");if(c.length===2)return c.pop()?.split(\";\").shift()}";
 
-const _wxwLBynq7csmMvkX7oSVBTXJlEOWJBY8WkcUonQ5PAA = (function(nitro) {
+const _2Frnx08EbpwPDtQljZ0oew3fVpRcl5l_x80vVWhzFc = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _p9kCkxIHjY3KDTsHISTlGQtDzYy7rrh3TT7G48wR4,
-_yaw4IMSkrvRwqkjdrBXvSwZhrX8u4MiUlIHk4AN9Di8,
-_wxwLBynq7csmMvkX7oSVBTXJlEOWJBY8WkcUonQ5PAA
+  _o7bykfnWW8tFY62XFofFC7ZKVgfrTO0jBt9S_OazIQ,
+_r3bUeKsg3lpFIkcFPRX36gy5K8NFZaV_vG1jhbnPJI,
+_2Frnx08EbpwPDtQljZ0oew3fVpRcl5l_x80vVWhzFc
 ];
 
 const inlineAppConfig = {
@@ -692,7 +692,7 @@ const _inlineRuntimeConfig = {
     },
     "localDatabase": {
       "type": "sqlite",
-      "filename": "E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.data/content/contents.sqlite"
+      "filename": "C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.data/content/contents.sqlite"
     },
     "integrityCheck": true
   },
@@ -704,7 +704,7 @@ const _inlineRuntimeConfig = {
     "alias": {},
     "fs": {
       "dir": [
-        "E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/public"
+        "C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/public"
       ]
     },
     "http": {
@@ -761,7 +761,7 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const serverAssets = [{"baseName":"server","dir":"E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/server/assets"}];
 
 const assets = createStorage();
 
@@ -773,11 +773,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.data/kv"}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend","watchOptions":{"ignored":[null]}}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/server","watchOptions":{"ignored":[null]}}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.nuxt"}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.nuxt/cache"}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -1486,7 +1486,7 @@ async function fetchDatabase(event, collection) {
 
 const warnOnceSet = /* @__PURE__ */ new Set();
 const DEFAULT_ENDPOINT = "https://api.iconify.design";
-const _LKCmy9 = defineCachedEventHandler(async (event) => {
+const _BNbeZC = defineCachedEventHandler(async (event) => {
   const url = getRequestURL(event);
   if (!url)
     return createError({ status: 400, message: "Invalid icon request" });
@@ -1544,7 +1544,7 @@ const _LKCmy9 = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
-const _NC0qMU = eventHandler(async (event) => {
+const _ZuOsP7 = eventHandler(async (event) => {
   const collection = getRouterParam(event, "collection");
   const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
   if (data) {
@@ -1554,7 +1554,7 @@ const _NC0qMU = eventHandler(async (event) => {
       return content.substring(lineStart.length, content.length - 1);
     }
   }
-  return await import('file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
+  return await import('file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
 });
 
 async function decompressSQLDump(base64Str, compressionType = "gzip") {
@@ -1825,7 +1825,7 @@ function cleanupQuery(query, options = { removeString: false }) {
   return result;
 }
 
-const _MepKgY = eventHandler(async (event) => {
+const _e70Te5 = eventHandler(async (event) => {
   const { sql } = await readBody(event);
   const collection = getRouterParam(event, "collection");
   assertSafeQuery(sql, collection);
@@ -1836,7 +1836,7 @@ const _MepKgY = eventHandler(async (event) => {
   return loadDatabaseAdapter(conf).all(sql);
 });
 
-const _tBuDkt = lazyEventHandler(() => {
+const _Sdghnq = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -1854,16 +1854,16 @@ const _tBuDkt = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_s7fg1F = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_YiYcQ4 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_s7fg1F, lazy: true, middleware: false, method: undefined },
-  { route: '/api/_nuxt_icon/:collection', handler: _LKCmy9, lazy: false, middleware: false, method: undefined },
-  { route: '/api/content/:collection/database.sql', handler: _NC0qMU, lazy: false, middleware: false, method: undefined },
-  { route: '/api/content/:collection/query', handler: _MepKgY, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _tBuDkt, lazy: false, middleware: false, method: undefined },
-  { route: '/_fonts/**', handler: _lazy_s7fg1F, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_s7fg1F, lazy: true, middleware: false, method: undefined }
+  { route: '/__nuxt_error', handler: _lazy_YiYcQ4, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_nuxt_icon/:collection', handler: _BNbeZC, lazy: false, middleware: false, method: undefined },
+  { route: '/api/content/:collection/database.sql', handler: _ZuOsP7, lazy: false, middleware: false, method: undefined },
+  { route: '/api/content/:collection/query', handler: _e70Te5, lazy: false, middleware: false, method: undefined },
+  { route: '/_ipx/**', handler: _Sdghnq, lazy: false, middleware: false, method: undefined },
+  { route: '/_fonts/**', handler: _lazy_YiYcQ4, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_YiYcQ4, lazy: true, middleware: false, method: undefined }
 ];
 
 function _captureError(error, type) {
@@ -2168,8 +2168,8 @@ function resolveUnrefHeadInput(input) {
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
-const getClientManifest = () => import('file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file://E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file://C:/Users/batma/Desktop/BrainPath/BrainPathTeknofest_AlzheimerDetection/Frontend/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
