@@ -10,6 +10,7 @@ const name = ref("BrainPath");
       <h1 class="text-4xl font-bold text-teal-600 mb-6">
         {{ name }}
       </h1>
+      <UButton>Cilck</UButton>
       <p class="text-xl text-gray-700 mb-8">
         Alzheimer hastalığı tespiti için yapay zeka destekli görüntü analizi
         platformu
