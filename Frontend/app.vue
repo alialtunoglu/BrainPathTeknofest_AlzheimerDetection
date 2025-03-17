@@ -1,1 +1,5 @@
-deneme
+<template>
+  <UApp>
+    <NuxtPage />
+  </UApp>
+</template>

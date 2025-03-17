@@ -1,0 +1,1 @@
+export { default } from "E:/Destop/BrainPathTeknofest_AlzheimerDetection/BrainPath_Frontend/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"
