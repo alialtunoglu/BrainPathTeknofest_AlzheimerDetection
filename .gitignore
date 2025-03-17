@@ -1,5 +1,10 @@
 # Frontend
-
+Frontend/.output
+Frontend/.data
+Frontend/.nuxt
+Frontend/.nitro
+Frontend/.cache
+Frontend/dist
 
 # Node dependencies
 **/node_modules
