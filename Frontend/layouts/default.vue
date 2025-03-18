@@ -8,8 +8,9 @@ useHead({
 
 <template>
   <div>
-    <Navbar />
-
+    <header>
+      <NavBar />
+    </header>
     <main>
       <Nuxt />
     </main>
