@@ -1,27 +1,35 @@
 <template>
   <nav class="bg-white shadow-md p-4">
     <div class="container mx-auto flex justify-between items-center">
-      <div class="text-xl font-bold text-teal-600">BrainPath</div>
+      <NuxtLink to="/" class="flex text-4xl font-bold text-teal-600">
+        BrainPath
+        <Icon name="tabler:brain" size="50" class="text-teal-600" />
+      </NuxtLink>
+
       <ul class="flex space-x-6">
-        <li>
-          <NuxtLink to="/" class="hover:text-teal-200 text-teal-600"
-            >Ana Sayfa</NuxtLink
-          >
+        <li class="flex items-center">
+          <NuxtLink to="/" class="hover:text-teal-200 text-teal-600">
+            <Icon name="mdi:home" class="size-10" />
+            <span class="hidden md:inline">Ana Sayfa</span>
+          </NuxtLink>
         </li>
-        <li>
-          <NuxtLink to="/about" class="hover:text-teal-200 text-teal-600"
-            >Hakkımızda</NuxtLink
-          >
+        <li class="flex items-center">
+          <NuxtLink to="/about" class="hover:text-teal-200 text-teal-600">
+            <Icon name="mdi:information" />
+            <span class="hidden md:inline">Hakkımızda</span>
+          </NuxtLink>
         </li>
-        <li>
-          <NuxtLink to="/model" class="hover:text-teal-200 text-teal-600"
-            >Model</NuxtLink
-          >
+        <li class="flex items-center">
+          <NuxtLink to="/model" class="hover:text-teal-200 text-teal-600">
+            <Icon name="mdi:brain" />
+            <span class="hidden md:inline">Model</span>
+          </NuxtLink>
         </li>
-        <li>
-          <NuxtLink to="/team" class="hover:text-teal-200 text-teal-600"
-            >Ekip</NuxtLink
-          >
+        <li class="flex items-center">
+          <NuxtLink to="/team" class="hover:text-teal-200 text-teal-600">
+            <Icon name="ic:sharp-groups" />
+            <span class="hidden md:inline">Ekip</span>
+          </NuxtLink>
         </li>
       </ul>
     </div>
@@ -32,6 +40,4 @@
 // Navigasyon bileşeni
 </script>
 
-<style scoped>
-/* Navigasyon stillemesi */
-</style>
+<style scoped></style>
