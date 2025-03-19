@@ -13,13 +13,13 @@ const items = [
     class: "text-xl",
   },
   {
-    label: "Model",
+    label: "Modeller",
     icon: "mdi:brain",
     slot: "models",
     class: "text-xl",
     children: [
       {
-        label: "Model",
+        label: "MR",
         description: "MR Görüntü Analizi",
         to: "/model/mr-analysis",
       },
@@ -29,8 +29,8 @@ const items = [
         to: "/model/handwriting",
       },
       {
-        label: "Model 1 + Model 2",
-        description: "Model 1 ve Model 2 birleşimi",
+        label: "MR + El yazı",
+        description: "MR + El yazı birleşimi",
         to: "/model/combined",
       },
     ],

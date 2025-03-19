@@ -1,77 +1,64 @@
-<template>
-  <div class="bg-white p-6 rounded-lg shadow-md">
-    <h2 class="text-2xl font-bold text-teal-600 mb-4">
-      Beyin MR Görüntüsü Yükleme
-    </h2>
-    <form @submit.prevent="handleSubmit">
-      <div class="mb-4">
-        <label class="block mb-2 text-gray-700">Görüntü Seçin:</label>
-        <input
-          type="file"
-          accept="image/*"
-          @change="handleFileChange"
-          class="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-      <div v-if="selectedFile" class="mb-4">
-        <p class="text-gray-700">Seçilen dosya: {{ selectedFile.name }}</p>
-        <img
-          :src="previewUrl"
-          v-if="previewUrl"
-          class="mt-2 max-w-full h-auto max-h-64"
-        />
-      </div>
-      <button
-        type="submit"
-        class="bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 disabled:opacity-50"
-        :disabled="!selectedFile"
-      >
-        Analiz Et
-      </button>
-    </form>
-    <div v-if="loading" class="mt-4 text-center">
-      <p>İşleniyor...</p>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
+
+// Yeni bir prop tanımlıyoruz
+const props = defineProps<{
+  type: "goruntu" | "file";
+}>();
 
 const selectedFile = ref<File | null>(null);
 const previewUrl = ref<string | null>(null);
+const fileInputValue = ref<string | null>(null);
 const loading = ref(false);
 
+// Dosya seçildiğinde çalışacak fonksiyon
 function handleFileChange(event: Event) {
   const input = event.target as HTMLInputElement;
-  if (input.files && input.files.length > 0) {
+  if (input.files && input.files[0]) {
     selectedFile.value = input.files[0];
-    createPreview();
+    previewUrl.value = URL.createObjectURL(selectedFile.value);
   }
 }
 
-function createPreview() {
-  if (selectedFile.value) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      previewUrl.value = e.target?.result as string;
-    };
-    reader.readAsDataURL(selectedFile.value);
+// fileInputValue değiştiğinde handleFileChange fonksiyonunu çağır
+watch(fileInputValue, (newValue, oldValue) => {
+  if (newValue !== oldValue) {
+    handleFileChange(newValue as unknown as Event);
   }
-}
-
-function handleSubmit() {
-  if (!selectedFile.value) return;
-
-  loading.value = true;
-  // Burada API entegrasyonu yapılacak
-  setTimeout(() => {
-    loading.value = false;
-    // Sonuç işleme
-  }, 2000);
-}
+});
 </script>
 
-<style scoped>
-/* Form stillemesi */
-</style>
+<template>
+  <UCard class="bg-white p-6">
+    <!-- Başlık, prop değerine göre değişiyor -->
+    <h2 class="text-2xl font-bold text-teal-600 mb-4">
+      {{
+        props.type === "goruntu"
+          ? "Beyin MR Görüntüsü Yükleme"
+          : "El Yazısı Analizi"
+      }}
+    </h2>
+    <div class="mb-4">
+      <label class="block mb-2 text-gray-700">Görüntü Seçin:</label>
+      <input
+        type="file"
+        class="border border-gray-300 rounded p-2 w-full text-black"
+        placeholder="Görüntü seç"
+        @change="handleFileChange"
+        :accept="props.type === 'goruntu' ? 'image/png, image/jpeg' : '.csv'"
+      />
+    </div>
+    <div v-if="selectedFile" class="mb-4">
+      <p class="text-gray-700">Seçilen dosya: {{ selectedFile.name }}</p>
+      <img
+        v-if="previewUrl"
+        :src="previewUrl"
+        class="mt-2 max-w-full h-auto max-h-64"
+      />
+    </div>
+
+    <div v-if="loading" class="mt-4 text-center">
+      <UAlert type="info" class="text-teal-600"> İşleniyor... </UAlert>
+    </div>
+  </UCard>
+</template>
