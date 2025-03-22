@@ -11,9 +11,10 @@
       <UButton
         class="my-10 bg-teal-500 hover:bg-teal-400"
         size="xl"
-        variant="solid"
+        variant="outline"
         icon="ant-design-radius-setting-outlined"
         color="neutral"
+        disabled
       >
         Analiz et
       </UButton>

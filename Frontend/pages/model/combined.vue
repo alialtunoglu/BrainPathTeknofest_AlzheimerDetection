@@ -25,6 +25,16 @@
           </div>
         </div>
       </div>
+      <UButton
+        class="flex w-40 justify-center mb-10 bg-teal-500 hover:bg-teal-400"
+        size="xl"
+        variant="outline"
+        icon="ant-design-radius-setting-outlined"
+        color="neutral"
+        disabled
+      >
+        Analiz et
+      </UButton>
     </div>
   </div>
 </template>
