@@ -44,14 +44,14 @@ async def predict(file: UploadFile = File(...)):
 
         # Tahmin yap
         predictions = model.predict(img_array)
-        confidence = float(predictions[0][0])
+        confidence = float(predictions[0][0]) # Hasta ise 0.5 üstünde bir değer dönüyor
         
         predicted_class = "Hasta" if confidence > 0.5 else "Sağlıklı"
-        probability = float(confidence) if predicted_class == "Hasta" else float(1 - confidence)
+        #probability = float(confidence) if predicted_class == "Hasta" else float(1 - confidence)
 
         return JSONResponse(content={
             "prediction": predicted_class,
-            "probability": f"{probability:.2%}",  # Yüzde formatında olasılık
+            "probability": confidence,  # Yüzde formatında olasılık
             "timestamp": timestamp  # Ham olasılık değeri
         })
 

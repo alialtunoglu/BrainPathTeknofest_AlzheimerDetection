@@ -49,15 +49,20 @@ async def predict(file: UploadFile = File(...)):
         
         # Tahmin yap
         prediction = components["model"].predict(pca_features)
+        #print(prediction)
+        proba = components["model"].predict_proba(pca_features)
+        probability = proba[:, 1]
+        print(probability[0])
+
         prediction_proba = components["model"].predict_proba(pca_features)
         
         # Sonuçları hazırla
         prediction = int(prediction[0])
-        probability = float(max(prediction_proba[0]))
+        #probability = float(max(prediction_proba[0]))
         
         return JSONResponse({
             "prediction": "Sağlıklı" if prediction == 0 else "Hasta",
-            "probability": probability,
+            "probability": probability[0],
             "timestamp": timestamp
         })
         
