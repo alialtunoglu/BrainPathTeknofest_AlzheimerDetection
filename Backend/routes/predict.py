@@ -59,9 +59,14 @@ async def predict(file: UploadFile = File(...)):
         # Sonuçları hazırla
         prediction = int(prediction[0])
         #probability = float(max(prediction_proba[0]))
-        
+        if prediction == 0 :
+            status=f"{(proba[:, 0][0])*100:.2f} Doğrulukla Sağlıklı"
+        else:
+            status=f"{(proba[:, 1][0])*100:.2f} Doğrulukla Hasta"
+
+
         return JSONResponse({
-            "prediction": "Sağlıklı" if prediction == 0 else "Hasta",
+            "prediction": status,
             "probability": probability[0],
             "timestamp": timestamp
         })
