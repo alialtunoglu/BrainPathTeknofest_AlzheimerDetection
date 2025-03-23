@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import predict, train
+from routes import predict, train, mrpredict
 
 app = FastAPI(
     title="Alzheimer Detection API",
@@ -20,6 +20,7 @@ app.add_middleware(
 # Route'ları ekle
 app.include_router(predict.router, prefix="/api/v1", tags=["predictions"])
 app.include_router(train.router, prefix="/api/v1", tags=["training"])
+app.include_router(mrpredict.router, prefix="/api/v1", tags=["mr_predictions"])
 
 # Ana sayfa
 @app.get("/")
