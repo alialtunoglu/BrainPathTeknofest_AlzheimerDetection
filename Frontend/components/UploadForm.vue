@@ -6,6 +6,8 @@ const props = defineProps<{
   type: "goruntu" | "file";
 }>();
 
+const emit = defineEmits(["file-selected"]);
+
 const selectedFile = ref<File | null>(null);
 const previewUrl = ref<string | null>(null);
 const fileInputValue = ref<string | null>(null);
@@ -17,6 +19,7 @@ function handleFileChange(event: Event) {
   if (input.files && input.files[0]) {
     selectedFile.value = input.files[0];
     previewUrl.value = URL.createObjectURL(selectedFile.value);
+    emit("file-selected", selectedFile.value);
   }
 }
 

@@ -8,6 +8,7 @@ const prediction = ref<{
   timestamp: string;
 } | null>(null);
 
+const file = ref<File | null>();
 const loading = ref(false);
 const error = ref<string | null>(null);
 
@@ -18,7 +19,9 @@ async function handleAnalysis(file: File) {
   try {
     prediction.value = await predictHandwriting(file);
   } catch (err) {
-    error.value = "Analiz sırasında bir hata oluştu" + err;
+    error.value =
+      "Analiz sırasında bir hata oluştu: " +
+      (err instanceof Error ? err.message : err);
   } finally {
     loading.value = false;
   }
@@ -32,7 +35,11 @@ async function handleAnalysis(file: File) {
     <div class="container mx-auto py-8 px-4">
       <h1 class="text-4xl font-bold text-teal-600 mb-6">Model</h1>
 
-      <UploadForm type="file" />
+      <UploadForm
+        type="file"
+        @file-selected="(selectedFile) => (file = selectedFile)"
+      />
+
       <UButton
         class="my-10 bg-teal-600 hover:bg-teal-500 text-white"
         size="xl"
@@ -41,13 +48,15 @@ async function handleAnalysis(file: File) {
         color="neutral"
         :loading="loading"
         :disabled="loading"
-        @click="handleAnalysis"
+        @click="
+          file ? handleAnalysis(file) : (error = 'Lütfen bir dosya seçin!')
+        "
       >
         Analiz et
       </UButton>
 
       <!-- Sonuç Gösterimi -->
-      <div v-if="prediction" class="mt-8 p-6 bg-white rounded-lg shadow-md">
+      <div v-if="prediction" class="mt-8 p-6 bg-white rounded-lg shadow-md text-black">
         <h2 class="text-2xl font-semibold mb-4">Analiz Sonucu</h2>
         <div class="space-y-2">
           <p class="text-lg">
@@ -68,7 +77,7 @@ async function handleAnalysis(file: File) {
           </p>
           <p class="text-lg">
             <span class="font-medium">Tarih:</span>
-            {{ new Date(prediction.timestamp).toLocaleString("tr-TR") }}
+            {{ prediction.timestamp }}
           </p>
         </div>
       </div>

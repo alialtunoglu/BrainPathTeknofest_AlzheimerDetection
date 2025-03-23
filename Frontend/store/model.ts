@@ -9,9 +9,10 @@ export async function predictHandwriting(
 ): Promise<PredictionResponse> {
   const formData = new FormData();
   formData.append("file", file);
+  console.log("Çıktı: " + formData.get("file")); // Burada "File" nesnesi olmalı!
 
   try {
-    const response = await fetch("http://localhost:8080/api/v1/predict", {
+    const response = await fetch("http://localhost:8000/api/v1/predict", {
       method: "POST",
       body: formData,
     });
