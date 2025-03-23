@@ -5,6 +5,7 @@
 Frontend/.data
 Frontend/.nuxt
 
+/myenv
 # Node dependencies
 **/node_modules
 
