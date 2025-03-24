@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, computed } from "vue";
 
 // Yeni bir prop tanımlıyoruz
 const props = defineProps<{
@@ -9,8 +9,6 @@ const props = defineProps<{
 const emit = defineEmits(["file-selected"]);
 
 const selectedFile = ref<File | null>(null);
-const previewUrl = ref<string | null>(null);
-const fileInputValue = ref<string | null>(null);
 const loading = ref(false);
 
 // Dosya seçildiğinde çalışacak fonksiyon
@@ -18,16 +16,19 @@ function handleFileChange(event: Event) {
   const input = event.target as HTMLInputElement;
   if (input.files && input.files[0]) {
     selectedFile.value = input.files[0];
-    previewUrl.value = URL.createObjectURL(selectedFile.value);
     emit("file-selected", selectedFile.value);
   }
 }
 
-// fileInputValue değiştiğinde handleFileChange fonksiyonunu çağır
-watch(fileInputValue, (newValue, oldValue) => {
-  if (newValue !== oldValue) {
-    handleFileChange(newValue as unknown as Event);
+// props.type ve selectedFile'e göre previewUrl'ü ayarlayan computed property
+const previewUrl = computed(() => {
+  if (selectedFile.value) {
+    if (props.type === "file") {
+      return "/csvimg.png"; // CSV dosyaları için varsayılan resim
+    }
+    return URL.createObjectURL(selectedFile.value);
   }
+  return null;
 });
 </script>
 
@@ -38,7 +39,7 @@ watch(fileInputValue, (newValue, oldValue) => {
       {{
         props.type === "goruntu"
           ? "Beyin MR Görüntüsü Yükleme"
-          : "El Yazısı Analizi"
+          : "El Yazısı Yükleme"
       }}
     </h2>
     <div class="mb-4">
