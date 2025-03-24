@@ -17,9 +17,18 @@ async def predict(file: UploadFile = File(...)):
         if not file.filename.endswith('.csv'):
             raise HTTPException(status_code=400, detail="Sadece CSV dosyaları kabul edilir")
         
+
+         # Dosya içeriğini belleğe al
+        contents = await file.read()  # bytes
+        
+        # Bellekten oku (decode -> StringIO -> pandas)
+        data = pd.read_csv(io.StringIO(contents.decode('utf-8')))
+        
         # Dosyayı geçici olarak kaydet
-        upload_dir = Path("data/uploaded_files")
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        '''
+        upload_dir = Path("data/uploaded_files")
         file_path = upload_dir / f"predict_{timestamp}.csv"
         await save_upload_file(file, file_path)
         
@@ -28,7 +37,7 @@ async def predict(file: UploadFile = File(...)):
         
         # Veriyi oku
         data = pd.read_csv(file_path)
-        
+        '''
         # Veriyi doğrula
         validate_data(data, is_training=False)
         
@@ -59,9 +68,14 @@ async def predict(file: UploadFile = File(...)):
         # Sonuçları hazırla
         prediction = int(prediction[0])
         #probability = float(max(prediction_proba[0]))
-        
+        if prediction == 0 :
+            status=f"{(proba[:, 0][0])*100:.2f} Doğrulukla Sağlıklı"
+        else:
+            status=f"{(proba[:, 1][0])*100:.2f} Doğrulukla Hasta"
+
+
         return JSONResponse({
-            "prediction": "Sağlıklı" if prediction == 0 else "Hasta",
+            "prediction": status,
             "probability": probability[0],
             "timestamp": timestamp
         })
