@@ -56,7 +56,7 @@ async function handleAnalysis(file: File) {
       </UButton>
 
       <!-- Sonuç Gösterimi -->
-      <div v-if="prediction" class="mt-8 p-6 bg-white rounded-lg shadow-md text-black">
+      <div v-if="prediction" class=" p-6 bg-white rounded-lg shadow-md text-black">
         <h2 class="text-2xl font-semibold mb-4">Analiz Sonucu</h2>
         <div class="space-y-2">
           <p class="text-lg">
