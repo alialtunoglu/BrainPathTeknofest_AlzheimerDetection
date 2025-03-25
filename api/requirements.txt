@@ -1,0 +1,17 @@
+# Core Dependencies
+azure-functions
+numpy==1.24.3
+catboost==1.2.7
+tensorflow-cpu==2.15.0
+fastapi==0.104.1
+joblib==1.1.0
+uvicorn==0.15.0
+python-multipart==0.0.5
+aiofiles==24.1.0
+scikit-learn==1.0.2
+pandas==2.0.3
+Pillow==10.0.0
+
+# Azure Storage
+azure-storage-blob==12.19.0
+python-dotenv==1.0.0 

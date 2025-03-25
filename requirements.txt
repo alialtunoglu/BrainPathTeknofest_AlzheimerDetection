@@ -1,0 +1,19 @@
+# Core Dependencies
+numpy==1.24.3  # Azure App Service'de daha kararlı
+catboost==1.2.7
+tensorflow-cpu==2.15.0  # CPU versiyonu Azure için daha uygun
+fastapi==0.104.1
+joblib==1.1.0
+uvicorn==0.15.0
+python-multipart==0.0.5
+aiofiles==24.1.0
+scikit-learn==1.0.2
+
+# Azure Specific
+azure-storage-blob==12.19.0  # Model dosyaları için
+python-dotenv==1.0.0  # Ortam değişkenleri için
+gunicorn==21.2.0  # Production sunucusu
+
+# Additional Requirements
+pandas==2.0.3
+Pillow==10.0.0  # Görüntü işleme için 
