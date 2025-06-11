@@ -157,7 +157,7 @@ Bu proje [MIT lisansı](LICENSE) altında lisanslanmıştır.
 
 Sorularınız veya geri bildirimleriniz için:
 - Email: [alialtunoglu02@gmail.com](mailto:alialtunoglu02@gmail.com)
-- GitHub: [https://github.com/username/brainpath](https://github.com/alialtunoglu/BrainPathTeknofest_AlzheimerDetection)
+- GitHub: [https://github.com/alialtunoglu/BrainPathTeknofest_AlzheimerDetection](https://github.com/alialtunoglu/BrainPathTeknofest_AlzheimerDetection)
 
 ---
 
